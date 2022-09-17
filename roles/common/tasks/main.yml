@@ -1,0 +1,17 @@
+---
+- name: "Installing Packages"
+  package:
+    name: "{{ item }}"
+    state: present 
+  with_items:
+      - zip
+      - vim
+- name: "Copy a resouce file to the remote machine"
+  copy:
+    src: /ansible-demo/roles/common/files/test1
+    dest: /tmp/test1
+- name: "Deploy file with host info"
+  copy:
+    content: "This servers hostname is: {{ ansible_facts['hostname'] }}\n"
+    dest: /tmp/test2
+

@@ -1,0 +1,10 @@
+[servers]
+node1
+node2
+
+[qa_group]
+node1
+
+[dev_group]
+node2
+
